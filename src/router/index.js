@@ -1,23 +1,39 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Shop from '@/views/Shop/Index'
+
 
 Vue.use(VueRouter)
 
+import shopRouter from './routes/shop'
+import centerRouter from './routes/center'
+
+
 const routes = [
+  // {
+  //   path: "/shop",
+  //   component: Shop,
+  //   children: [
+  //     // 点餐
+  //     {path: "order", component: Order},
+  //     // 优惠券
+  //     {path: "discount", component: Discount},
+  //     // 排队取号
+  //     {path: "line", component: Line},
+  //     // 餐桌预定
+  //     {path: "table", component: Table},
+  //   ]
+  // },
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: "/",
+    redirect: "/shop"
   },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+  ...shopRouter,
+  centerRouter
+  // {
+  //   path: "/center",
+  //   component: Center
+  // }
 ]
 
 const router = new VueRouter({
