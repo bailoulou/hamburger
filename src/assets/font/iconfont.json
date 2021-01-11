@@ -1,0 +1,51 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "651188",
+      "name": "排队取号",
+      "font_class": "paiduiquhao0101",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "4431972",
+      "name": "预约",
+      "font_class": "yuyue",
+      "unicode": "e66f",
+      "unicode_decimal": 58991
+    },
+    {
+      "icon_id": "5113710",
+      "name": "汉堡",
+      "font_class": "hanbao",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "7550240",
+      "name": "优惠券",
+      "font_class": "youhuiquan",
+      "unicode": "e692",
+      "unicode_decimal": 59026
+    },
+    {
+      "icon_id": "9297196",
+      "name": "点餐",
+      "font_class": "diancan",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "18311491",
+      "name": "下  拉",
+      "font_class": "xiala",
+      "unicode": "e646",
+      "unicode_decimal": 58950
+    }
+  ]
+}
