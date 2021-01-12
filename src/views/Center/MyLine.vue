@@ -7,7 +7,15 @@
         @click-left="onClickLeft"
         style="border-bottom: 1px solid #e5e5e5"
         />
-        <h4>暂无预约</h4>
+        <h3>暂无预约</h3>
+        <div class="table">
+            <div class="left">
+                <h4>大厅(3-5人桌)</h4>
+                <p>预定时间: <span>12月12号 12:30</span></p>
+                <p>就餐人数: <i>6</i>人</p>
+            </div>
+            <button>等待确认</button>
+        </div>
     </div>
 </template>
 
@@ -41,11 +49,41 @@ export default {
 
 <style lang="scss" scoped>
     h4{
+        line-height: 1;  
+        font-weight: 500;
+        font-size: 20px;
+    }
+    p{
+        margin: 5px;
+        padding: 0;
+        font-size: 16px;
+        color: #50616d;
+    }
+    h3{
         font-weight: 500;
         text-align: center;
         height: 100px;
         line-height: 100px;
         // border-top: 1px solid #e5e5e5;
+    }
+    .table{
+        border-top: 1px solid #e5e5e5;
+        border-bottom: 1px solid #e5e5e5;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .table>.left{
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        padding-right: 20px;
+    }
+    .table>button{
+        height: 30px;
+        border-radius: 15px;
+        background-color: #16a951;
     }
     
 </style>
