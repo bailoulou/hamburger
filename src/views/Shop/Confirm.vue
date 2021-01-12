@@ -1,6 +1,5 @@
 <template>
     <div>
-       餐桌预定
-       
+        确认订单
     </div>
 </template>

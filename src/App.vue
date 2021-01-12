@@ -1,30 +1,30 @@
 <template>
   <div id="app">
     <div id="nav">
+      <Footer v-show="isShow"></Footer>
     </div>
     <router-view/>
   </div>
 </template>
 
+<script>
+import Footer from "@/components/Navigation/Footer"
+export default {
+
+  components: {
+    Footer,
+  },
+  // 需要隐藏的脚部的页面需要加上
+  computed: {
+    isShow() {
+        return this.$store.state.global.isShowFooter;
+    },
+  },
+}
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+  // body{
+  //   background-color: #e5e5e5;
+  // }
 </style>

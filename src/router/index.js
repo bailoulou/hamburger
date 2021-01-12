@@ -1,13 +1,20 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Shop from '@/views/Shop/Index'
+// import Shop from '@/views/Shop/Index'
 
 
 Vue.use(VueRouter)
 
 import shopRouter from './routes/shop'
+import orderRouter from './routes/order'
+import discountRouter from './routes/discount'
+import lineRouter from './routes/line'
+import tableRouter from './routes/table'
+import confirmRouter from './routes/confirm'
 import centerRouter from './routes/center'
-
+import myDiscountRouter from './routes/myDiscount'
+import myOrderRouter from './routes/myOrder'
+import myLineRouter from './routes/myLine'
 
 const routes = [
   // {
@@ -28,8 +35,16 @@ const routes = [
     path: "/",
     redirect: "/shop"
   },
-  ...shopRouter,
-  centerRouter
+  shopRouter,
+  centerRouter,
+  orderRouter,
+  discountRouter,
+  lineRouter,
+  tableRouter,
+  confirmRouter,
+  myDiscountRouter, 
+  myOrderRouter,
+  myLineRouter,
   // {
   //   path: "/center",
   //   component: Center

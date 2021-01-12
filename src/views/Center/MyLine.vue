@@ -1,13 +1,13 @@
 <template>
     <div>
        <van-nav-bar
-        title="优惠券"
+        title="我的预约"
         left-text="返回"
         left-arrow
         @click-left="onClickLeft"
         style="border-bottom: 1px solid #e5e5e5"
         />
-        <h4>暂无优惠券</h4>
+        <h4>暂无预约</h4>
     </div>
 </template>
 
@@ -21,7 +21,7 @@ export default {
      methods: {
         onClickLeft() {
         // Toast('返回');
-            this.$router.push({path:"/shop"})
+            this.$router.push({path:"/center"})
             // 需要隐藏的脚部的页面需要加上
             this.setFooter(true)
         },
