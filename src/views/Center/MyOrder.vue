@@ -7,16 +7,50 @@
         @click-left="onClickLeft"
         style="border-bottom: 1px solid #e5e5e5"
         />
-        <h4>暂无订单</h4>
+        <van-tabs @click="onClick">
+            <van-tab title="全部">
+                <h4>暂无订单</h4>
+                <van-card
+                num="2"
+                price="2.00"
+                desc="描述信息"
+                title="商品标题"
+                thumb="https://img.yzcdn.cn/vant/ipad.jpeg"
+                >
+                    <template #tags>
+                        <van-tag plain type="danger">标签</van-tag>
+                        <van-tag plain type="danger">标签</van-tag>
+                    </template>
+                    <template #footer>
+                        <van-button size="mini">按钮</van-button>
+                        <van-button size="mini">按钮</van-button>
+                    </template>
+                </van-card>
+            </van-tab>
+            <van-tab title="待付款">
+                <h4>暂无订单</h4>
+            </van-tab>
+            <van-tab title="已完成">
+                <h4>暂无订单</h4>
+            </van-tab>
+            <van-tab title="已取消">
+                <h4>暂无订单</h4>
+            </van-tab>
+        </van-tabs>
     </div>
 </template>
 
 <script>
 import Vue from 'vue';
-import { NavBar } from 'vant';
 import { mapMutations } from "vuex"
+import { Tab, Tabs, Card, NavBar, Tag, Button } from 'vant';
 
+Vue.use(Card);
+Vue.use(Tab);
+Vue.use(Tabs);
 Vue.use(NavBar);
+Vue.use(Button);
+Vue.use(Tag);
 export default {
      methods: {
         onClickLeft() {
@@ -27,6 +61,10 @@ export default {
         },
         // 需要隐藏的脚部的页面需要加上
         ...mapMutations("global", ["setFooter"]),
+
+        onClick(name, title) {
+            
+        },
     },
     // 需要隐藏的脚部的页面需要加上
     created(){

@@ -8,12 +8,14 @@
        <van-cell title="我的订单" is-link @click="toMyOrder"/>
        <van-cell title="我的预约" is-link @click="toMyLine"/>
        <van-cell title="我的优惠券" is-link value="0" @click="toMyDiscount"/>
+
     </div>
 </template>
 
 <script>
 import Vue from 'vue';
 import { NavBar, Cell, CellGroup } from 'vant';
+
 
 Vue.use(Cell);
 Vue.use(CellGroup);

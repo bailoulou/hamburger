@@ -25,7 +25,7 @@
         </van-grid> -->
         <div class="header">
             <div class="left">
-                <img src="../../assets/bao.jpg" alt="">
+                <img src="../../assets/q3.png" alt="">
             </div>
             <div class="right">
                 <div>
@@ -113,7 +113,7 @@ export default {
     }
     .left>img{
         width: 85px;
-        margin-top: 15px;
+        // margin-top: 15px;
     }
     .right{
         height: 66px;
