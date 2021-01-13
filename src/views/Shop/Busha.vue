@@ -3,18 +3,15 @@
         <van-nav-bar
             title="餐桌预约"
             left-text=""
-<<<<<<< HEAD
-            right-text="傻逼玩意"
-=======
             right-text="欢迎你"
->>>>>>> 82f1e3afb0bf5389fe0bbbf6b0aa953483444a9f
             left-arrow
             @click-left="onClickLeft"
             @click-right="onClickRight"
         />
 
        <div class="tou">
-           <span class="jia">!</span><span class="jia1">为了保证你的按时用餐，亲:请及时预定!</span>
+           等待商家确认....
+           
        </div>
        <div class="z">
            <div class="z1">
@@ -30,37 +27,12 @@
            <div class="y1">
                联系人信息
            </div>
-           <div class="y2">
-              <div class="y21">
-                  <span>联系人：</span>
-                  <span class="y211">请输入你的姓名</span>
-              </div>
-              <div class="y22">
-<van-field name="radio" label="性别：">
-  <template #input>
-    <van-radio-group v-model="checked" direction="horizontal">
-      <van-radio name="1">女</van-radio>
-      <van-radio name="2">男</van-radio>
-    </van-radio-group>
-  </template>
-</van-field>
-              </div>
-              <div class="y23">
-                  <span>手机号：</span>
-                  <span class="y211">请输入您的手机号</span>
-              </div>
-              <div class="y24">
-                  <span>联系人：</span>
-                  <span class="y211">请输入您的备注要求，我们将要尽量满足你</span>
-              </div>
+           <div class="ha">
+               客户未填写信息
            </div>
        </div>
-<<<<<<< HEAD
-       <div class="wei">
-=======
-       <div class="wei" @click="f">
->>>>>>> 82f1e3afb0bf5389fe0bbbf6b0aa953483444a9f
-          <span>确定提交</span>
+       <div class="wei" @click="fff">
+          <span>返回大厅等待</span>
        </div>
     </div>
 </template>
@@ -87,24 +59,15 @@ export default {
     return { checked };
   },
      methods: {
-<<<<<<< HEAD
-    onClickLeft() {
-      Toast('返回');
-      
-    },
-    onClickRight() {
-      Toast('按钮');
-=======
-         f(){
-         this.$router.push({path:'/busha'})
+         fff(){
+             this.$router.push({path:'/shop'})
          },
     onClickLeft() {
-      this.$router.push({path:'/table'})
       
+      this.$router.push({path:'/shaba'})
     },
     onClickRight() {
-      Toast('凡哥最帅');
->>>>>>> 82f1e3afb0bf5389fe0bbbf6b0aa953483444a9f
+      Toast('天下最帅凡哥，最丑谢浩');
       
     },
     showPopup() {
@@ -120,23 +83,24 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.ha{
+    width: 100%;
+    height: 218px;
+    color: #3BB19C;
+    line-height: 218px;
+    text-align: center;
+    font-size: 30px;
+}
 .wei{
     border-width: 0px;
     position: relative;
-<<<<<<< HEAD
-=======
     z-index: 123;
     text-align: center;
->>>>>>> 82f1e3afb0bf5389fe0bbbf6b0aa953483444a9f
     left: 0px;
     top: 0px;
     width: 245px;
     height: 42px;
-<<<<<<< HEAD
-    margin: 100px auto 0 auto;
-=======
-    margin: 50px auto 0 auto;
->>>>>>> 82f1e3afb0bf5389fe0bbbf6b0aa953483444a9f
+    margin: 10px auto 0 auto;
     color: white;
     border: none;
     border-radius: 30px;
@@ -273,27 +237,11 @@ border-bottom:1px solid #999999;
     font-style: normal;
 }
 .tou{
-    border-width: 0px;
-    position: relative;
-<<<<<<< HEAD
-=======
+    width: 100%;
+    height: 180px;
+    font-size: 30px;
+    line-height: 180px;
     text-align: center;
->>>>>>> 82f1e3afb0bf5389fe0bbbf6b0aa953483444a9f
-    left: 0px;
-    top: 0px;
-    width: 328px;
-    height: 43px;
-    margin: 10px auto 0 auto;
-    background-color: rgba(255, 255, 255, 1);
-    border: none;
-    border-radius: 30px;
-    -moz-box-shadow: 2px 2px 2px rgba(121, 121, 121, 0.349019607843137);
-    -webkit-box-shadow: 2px 2px 2px rgba(121, 121, 121, 0.349019607843137);
-    box-shadow: 2px 2px 2px rgba(121, 121, 121, 0.349019607843137);
-    font-family: '微软雅黑';
-    font-weight: 400;
-    font-style: normal;
-    line-height: 43px;
     
 }
 .jia1{
