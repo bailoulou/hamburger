@@ -16,6 +16,7 @@ import myDiscountRouter from './routes/myDiscount'
 import myOrderRouter from './routes/myOrder'
 import myLineRouter from './routes/myLine'
 import querenRouter from './routes/queren'
+import shopyRouter from './routes/shopy'
 
 const routes = [
   // {
@@ -47,6 +48,7 @@ const routes = [
   myOrderRouter,
   myLineRouter,
   querenRouter,
+  shopyRouter,
   // {
   //   path: "/center",
   //   component: Center
