@@ -42,6 +42,8 @@
 
 
 <script>
+// 需要隐藏的脚部的页面需要加上
+import { mapMutations } from "vuex"
 export default {
   data() {
     return {
@@ -57,7 +59,17 @@ export default {
   methods:{
   tiao(){
          this.$router.push({path:'/shopy'})
-     },}
+     },
+     // 需要隐藏的脚部的页面需要加上
+        ...mapMutations("global", ["setFooter"]),
+     },
+     created(){
+        this.setFooter(false)
+    },
+    // 需要隐藏的脚部的页面需要加上
+    beforeDestory(){
+        this.setFooter(true)
+    }
 };
 </script>
 <style lang="scss" scoped>

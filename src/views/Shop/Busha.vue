@@ -38,6 +38,8 @@
 </template>
 <script>
             import Vue from 'vue';
+            // 需要隐藏的脚部的页面需要加上
+            import { mapMutations } from "vuex"
            import { ref } from 'vue';
             import { NavBar, Toast,Cell,Form,Field,Radio,RadioGroup} from 'vant';
             import 'vant/lib/index.css';
@@ -65,7 +67,11 @@ export default {
     onClickLeft() {
       
       this.$router.push({path:'/shaba'})
+      // 需要隐藏的脚部的页面需要加上
+            this.setFooter(true)
     },
+    // 需要隐藏的脚部的页面需要加上
+        ...mapMutations("global", ["setFooter"]),
     onClickRight() {
       Toast('天下最帅凡哥，最丑谢浩');
       
@@ -79,6 +85,10 @@ export default {
    
     },
   },
+  // 需要隐藏的脚部的页面需要加上
+  created(){
+        this.setFooter(false)
+    },
   
 };
 </script>
