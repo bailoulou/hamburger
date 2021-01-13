@@ -13,7 +13,7 @@
       >
         <div class="left">
           <p>{{item.name}} 桌号{{item.id}}</p>
-          <p>{{item.num}}</p>
+          <p>{{item.num}}人</p>
         </div>
         <div class="right">
           <p>
@@ -76,6 +76,7 @@ export default {
         this.PaiDui = '取号成功(取消排队)'
       }else{
         this.PaiDui = '立即取号'
+        this.tableNum = []
       }
       console.log(this.tableNum)
       window.localStorage.setItem('tableNum', JSON.stringify(this.tableNum))
@@ -95,6 +96,12 @@ export default {
   // 需要隐藏的脚部的页面需要加上
   created(){
       this.setFooter(false)
+      console.log(JSON.parse(window.localStorage.getItem('tableNum'))[0])
+      const 
+      this.lineInfo.forEach(item => {
+        item.isActive = false
+      })
+      // console.log(this.Text)
   },
 };
 </script>
