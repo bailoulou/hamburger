@@ -31,7 +31,7 @@
         <img   src="https://axhub.im/pro/221031c5a692ef70/images/%E6%89%AB%E7%A0%81%E7%82%B9%E9%A4%90/u151.png" alt="">
         </div>
         <div class="jg">￥<span>30.5</span></div>
-        <div class="gm"><span>结账</span></div>
+        <div class="gm" @click="tiao"><span>结账</span></div>
         <span class="numt">3</span>
 
     </div>
@@ -54,6 +54,10 @@ export default {
       ]
     };
   },
+  methods:{
+  tiao(){
+         this.$router.push({path:'/shopy'})
+     },}
 };
 </script>
 <style lang="scss" scoped>
@@ -161,4 +165,5 @@ top:-30px;
         color:red;
     }
 }
+
 </style>

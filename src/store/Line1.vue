@@ -4,22 +4,53 @@
     style="border-bottom: 1px solid #e5e5e5">
     </van-nav-bar>
     <p class="text">听到叫号请到店内就餐，过号自动取消排队</p>
-    <ul v-show="Text">
-      <li class="bigBox" v-for="(item, index) in lineInfo" 
-      :key="index" 
-      @click="onCheck(item)" 
-      :class="{active: item.isActive}"
-      v-show="Text"
-      >
+    <ul @click="onCheck" v-show="Text">
+      <li class="bigBox">
         <div class="left">
-          <p>{{item.name}} 桌号{{item.id}}</p>
-          <p>{{item.num}}</p>
+          <p>小桌 桌号 1</p>
+          <p>1-2人</p>
         </div>
         <div class="right">
           <p>
-            等待<span>{{item.wait}}</span>桌
+            等待<span>2</span>桌
           </p>
-          <p>大约<span>{{item.time}}</span>分钟</p>
+          <p>大约<span>20</span>分钟</p>
+        </div>
+      </li>
+      <li class="bigBox">
+        <div class="left">
+          <p>中桌</p>
+          <p>3-4人</p>
+        </div>
+        <div class="right">
+          <p>
+            等待<span>2</span>桌
+          </p>
+          <p>大约<span>20</span>分钟</p>
+        </div>
+      </li>
+      <li class="bigBox">
+        <div class="left">
+          <p>大桌</p>
+          <p>5-8人</p>
+        </div>
+        <div class="right">
+          <p>
+            等待<span>2</span>桌
+          </p>
+          <p>大约<span>20</span>分钟</p>
+        </div>
+      </li>
+      <li class="bigBox">
+        <div class="left">
+          <p>特大桌</p>
+          <p>9-16人</p>
+        </div>
+        <div class="right">
+          <p>
+            等待<span>2</span>桌
+          </p>
+          <p>大约<span>20</span>分钟</p>
         </div>
       </li>
     </ul>
@@ -44,20 +75,10 @@ import { NavBar, Toast,Overlay  } from "vant";
 Vue.use(NavBar);
 Vue.use(Toast);
 Vue.use(Overlay);
-var lineInfo = [
-  {id: 1, name: '小桌', num: "1-2", wait: 0, time: 20, isActive: false},
-  {id: 2, name: '中桌', num: "3-4", wait: 0, time: 20, isActive: false},
-  {id: 3, name: '大桌', num: "5-8", wait: 0, time: 20, isActive: false},
-  {id: 4, name: '特大桌', num: "9-16", wait: 0, time: 20, isActive: false},
-  // {id: 1, name: '小桌', num: "1-2", wait: 0, time: 20, },
-  // {id: 2, name: '中桌', num: "3-4", wait: 0, time: 20, },
-  // {id: 3, name: '大桌', num: "5-8", wait: 0, time: 20, },
-  // {id: 4, name: '特大桌', num: "9-16", wait: 0, time: 20, },
-]
+
 export default {
   data(){
     return{
-      lineInfo,
       Text:true,
       PaiDui:'立即取号',
       PaiDuiNum:"A008",
@@ -73,7 +94,6 @@ export default {
     // 需要隐藏的脚部的页面需要加上
     ...mapMutations("global", ["setFooter"]),
     table(){
-      // console.log(this.lineInfo)
       this.Text = !this.Text
       if(this.Text == false){
         this.PaiDui = '取号成功(取消排队)'
@@ -82,26 +102,20 @@ export default {
       }
       
     },
-    onCheck(item){
-      // console.log(this.isActive)
-      // this.isActive = true
-      // console.log(item)
-      item.isActive = true
-    }
-    // onCheck() {
-    //   const btns = document.querySelectorAll("ul > li");
+    onCheck() {
+      const btns = document.querySelectorAll("ul > li");
 
-    //   for (let i = 0; i < btns.length; i++) {
-    //     btns[i].onclick = function() {
-    //       for (let j = 0; j < btns.length; j++) {
-    //         btns[j].classList.remove("active");
-    //       }
+      for (let i = 0; i < btns.length; i++) {
+        btns[i].onclick = function() {
+          for (let j = 0; j < btns.length; j++) {
+            btns[j].classList.remove("active");
+          }
 
-    //       btns[i].classList.add("active");
-    //     };
-    //   }
+          btns[i].classList.add("active");
+        };
+      }
 
-    // },
+    },
   },
   // 需要隐藏的脚部的页面需要加上
   created(){
@@ -111,9 +125,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-p{
-  font-size: 14px;
-}
 .text {
   text-align: center;
   color: red;
