@@ -47,6 +47,7 @@
 
 <script>
 import Vue from 'vue';
+// 需要隐藏的脚部的页面需要加上
 import { mapMutations } from "vuex";
 import { Tab, Tabs, Card, NavBar, Tag, Button, Field, SubmitBar, ActionSheet, Cell, CellGroup } from 'vant';
 
