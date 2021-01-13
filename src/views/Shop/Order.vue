@@ -103,7 +103,7 @@ export default {
      this.num2++
      },
      tiao(){
-         this.$router.push({path:'/shop/queren'})
+         this.$router.push({path:'/queren'})
      }
   },
 };
