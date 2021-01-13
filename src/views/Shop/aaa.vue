@@ -49,13 +49,6 @@ var lineInfo = [
   {id: 2, name: '中桌', num: "3-4", wait: 0, time: 20, isActive: false},
   {id: 3, name: '大桌', num: "5-8", wait: 0, time: 20, isActive: false},
   {id: 4, name: '特大桌', num: "9-16", wait: 0, time: 20, isActive: false},
-<<<<<<< HEAD
-=======
-  // {id: 1, name: '小桌', num: "1-2", wait: 0, time: 20, },
-  // {id: 2, name: '中桌', num: "3-4", wait: 0, time: 20, },
-  // {id: 3, name: '大桌', num: "5-8", wait: 0, time: 20, },
-  // {id: 4, name: '特大桌', num: "9-16", wait: 0, time: 20, },
->>>>>>> 82f1e3afb0bf5389fe0bbbf6b0aa953483444a9f
 ]
 export default {
   data(){
@@ -63,14 +56,9 @@ export default {
       lineInfo,
       Text:true,
       PaiDui:'立即取号',
-<<<<<<< HEAD
       PaiDuiNum:"008",
       Num: 0,
       tableNum: [],
-=======
-      PaiDuiNum:"A008",
-      Num: 0,
->>>>>>> 82f1e3afb0bf5389fe0bbbf6b0aa953483444a9f
     }
   },
   methods: {
@@ -88,14 +76,12 @@ export default {
         this.PaiDui = '取号成功(取消排队)'
       }else{
         this.PaiDui = '立即取号'
-        this.tableNum = []
       }
       console.log(this.tableNum)
       window.localStorage.setItem('tableNum', JSON.stringify(this.tableNum))
       
     },
     onCheck(item){
-<<<<<<< HEAD
       // console.log(item)
       this.lineInfo.forEach(item => {
         item.isActive = false
@@ -105,38 +91,10 @@ export default {
       this.tableNum.push(item.id)
       // console.log(this.tableNum)
     }
-=======
-      // console.log(this.isActive)
-      // this.isActive = true
-      // console.log(item)
-      item.isActive = true
-    }
-    // onCheck() {
-    //   const btns = document.querySelectorAll("ul > li");
-
-    //   for (let i = 0; i < btns.length; i++) {
-    //     btns[i].onclick = function() {
-    //       for (let j = 0; j < btns.length; j++) {
-    //         btns[j].classList.remove("active");
-    //       }
-
-    //       btns[i].classList.add("active");
-    //     };
-    //   }
-
-    // },
->>>>>>> 82f1e3afb0bf5389fe0bbbf6b0aa953483444a9f
   },
   // 需要隐藏的脚部的页面需要加上
   created(){
       this.setFooter(false)
-<<<<<<< HEAD
-      this.lineInfo.forEach(item => {
-        item.isActive = false
-      })
-      // console.log(this.Text)
-=======
->>>>>>> 82f1e3afb0bf5389fe0bbbf6b0aa953483444a9f
   },
 };
 </script>

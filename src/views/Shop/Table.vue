@@ -2,8 +2,13 @@
     <div class="container">
         <van-nav-bar
             title="餐桌预约"
+<<<<<<< HEAD
+            left-text=""
+            right-text="傻逼玩意"
+=======
             
             right-text="欢迎您"
+>>>>>>> 82f1e3afb0bf5389fe0bbbf6b0aa953483444a9f
             left-arrow
             @click-left="onClickLeft"
             @click-right="onClickRight"
@@ -17,7 +22,11 @@
                <ul>
                    <li>
                       
+<<<<<<< HEAD
+                       <div class="active">&lt;</div>
+=======
                        <div class="active"><</div>
+>>>>>>> 82f1e3afb0bf5389fe0bbbf6b0aa953483444a9f
                        <div class="active1">
                            <p class="active2">今天</p>
                            <p>3-14</p>
@@ -36,7 +45,11 @@
                        <p>3-17</p>
                    </li>
                    <li>
+<<<<<<< HEAD
+                       <div class="active">&gt;</div>
+=======
                        <div class="active">></div>
+>>>>>>> 82f1e3afb0bf5389fe0bbbf6b0aa953483444a9f
                        <div class="tu">
                            <van-cell is-link @click="showPopup">
                                 <van-icon name="comment-o" color="#1989fa" size="30" />
@@ -223,7 +236,11 @@
 </van-grid>
        </div>
        </div>
+<<<<<<< HEAD
+       <div class="wei">
+=======
        <div class="wei" @click="ff">
+>>>>>>> 82f1e3afb0bf5389fe0bbbf6b0aa953483444a9f
           <span>立即绑定</span>
        </div>
     </div>
@@ -264,6 +281,14 @@ export default {
     };
   },
      methods: {
+<<<<<<< HEAD
+    onClickLeft() {
+      Toast('返回');
+      
+    },
+    onClickRight() {
+      Toast('按钮');
+=======
          ff() {
       this.$router.push({path:'/shaba'})
       
@@ -274,6 +299,7 @@ export default {
     },
     onClickRight() {
       Toast('凡哥很帅滴');
+>>>>>>> 82f1e3afb0bf5389fe0bbbf6b0aa953483444a9f
       
     },
     showPopup() {
@@ -297,13 +323,19 @@ export default {
    width: 100%;
    height: 100%;
    font-size: 14px;
+<<<<<<< HEAD
+=======
    text-align: center;
+>>>>>>> 82f1e3afb0bf5389fe0bbbf6b0aa953483444a9f
 }
 .wei{
     border-width: 0px;
     position: relative;
+<<<<<<< HEAD
+=======
     z-index: 645;
     text-align: center;
+>>>>>>> 82f1e3afb0bf5389fe0bbbf6b0aa953483444a9f
     left: 0px;
     top: 0px;
     width: 245px;
@@ -374,7 +406,11 @@ export default {
     margin-top: 10px;
     // left: -20px;
      font-size:14px ;
+<<<<<<< HEAD
+text-align: left;
+=======
      text-align: left;
+>>>>>>> 82f1e3afb0bf5389fe0bbbf6b0aa953483444a9f
     
 }
 .container{
@@ -405,7 +441,10 @@ export default {
     width: 328px;
     height: 43px;
     margin: 10px auto 0 auto;
+<<<<<<< HEAD
+=======
     text-align: center;
+>>>>>>> 82f1e3afb0bf5389fe0bbbf6b0aa953483444a9f
     background-color: rgba(255, 255, 255, 1);
     border: none;
     border-radius: 30px;

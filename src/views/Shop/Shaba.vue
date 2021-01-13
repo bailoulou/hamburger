@@ -3,7 +3,11 @@
         <van-nav-bar
             title="餐桌预约"
             left-text=""
+<<<<<<< HEAD
+            right-text="傻逼玩意"
+=======
             right-text="欢迎你"
+>>>>>>> 82f1e3afb0bf5389fe0bbbf6b0aa953483444a9f
             left-arrow
             @click-left="onClickLeft"
             @click-right="onClickRight"
@@ -51,7 +55,11 @@
               </div>
            </div>
        </div>
+<<<<<<< HEAD
+       <div class="wei">
+=======
        <div class="wei" @click="f">
+>>>>>>> 82f1e3afb0bf5389fe0bbbf6b0aa953483444a9f
           <span>确定提交</span>
        </div>
     </div>
@@ -79,6 +87,14 @@ export default {
     return { checked };
   },
      methods: {
+<<<<<<< HEAD
+    onClickLeft() {
+      Toast('返回');
+      
+    },
+    onClickRight() {
+      Toast('按钮');
+=======
          f(){
          this.$router.push({path:'/busha'})
          },
@@ -88,6 +104,7 @@ export default {
     },
     onClickRight() {
       Toast('凡哥最帅');
+>>>>>>> 82f1e3afb0bf5389fe0bbbf6b0aa953483444a9f
       
     },
     showPopup() {
@@ -106,13 +123,20 @@ export default {
 .wei{
     border-width: 0px;
     position: relative;
+<<<<<<< HEAD
+=======
     z-index: 123;
     text-align: center;
+>>>>>>> 82f1e3afb0bf5389fe0bbbf6b0aa953483444a9f
     left: 0px;
     top: 0px;
     width: 245px;
     height: 42px;
+<<<<<<< HEAD
+    margin: 100px auto 0 auto;
+=======
     margin: 50px auto 0 auto;
+>>>>>>> 82f1e3afb0bf5389fe0bbbf6b0aa953483444a9f
     color: white;
     border: none;
     border-radius: 30px;
@@ -251,7 +275,10 @@ border-bottom:1px solid #999999;
 .tou{
     border-width: 0px;
     position: relative;
+<<<<<<< HEAD
+=======
     text-align: center;
+>>>>>>> 82f1e3afb0bf5389fe0bbbf6b0aa953483444a9f
     left: 0px;
     top: 0px;
     width: 328px;
