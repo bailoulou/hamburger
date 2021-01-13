@@ -10,6 +10,7 @@ import orderRouter from './routes/order'
 import discountRouter from './routes/discount'
 import lineRouter from './routes/line'
 import tableRouter from './routes/table'
+import shabaRouter from './routes/shaba'
 import confirmRouter from './routes/confirm'
 import centerRouter from './routes/center'
 import myDiscountRouter from './routes/myDiscount'
@@ -45,6 +46,7 @@ const routes = [
   myDiscountRouter, 
   myOrderRouter,
   myLineRouter,
+  shabaRouter,
   // {
   //   path: "/center",
   //   component: Center

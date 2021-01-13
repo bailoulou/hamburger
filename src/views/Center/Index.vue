@@ -3,7 +3,7 @@
        <van-nav-bar title="我的" style="border: 1px solid #e5e5e5"/>
        <div class="header">
            <img src="../../assets/q3.png">
-           <h4>您当前所在 1 号桌</h4>
+           <h4>您当前所在 {{tableNum}} 号桌</h4>
        </div>
        <van-cell title="我的订单" is-link @click="toMyOrder"/>
        <van-cell title="我的预约" is-link @click="toMyLine"/>
@@ -32,6 +32,11 @@ export default {
             this.$router.push({path:"/myDiscount"})
         }
 
+    },
+    computed: {
+        tableNum(){
+            return JSON.parse(window.localStorage.getItem('tableNum'))[0]
+        }
     },
     
 }

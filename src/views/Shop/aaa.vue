@@ -76,7 +76,6 @@ export default {
         this.PaiDui = '取号成功(取消排队)'
       }else{
         this.PaiDui = '立即取号'
-        this.tableNum = []
       }
       console.log(this.tableNum)
       window.localStorage.setItem('tableNum', JSON.stringify(this.tableNum))
@@ -96,10 +95,6 @@ export default {
   // 需要隐藏的脚部的页面需要加上
   created(){
       this.setFooter(false)
-      this.lineInfo.forEach(item => {
-        item.isActive = false
-      })
-      // console.log(this.Text)
   },
 };
 </script>
