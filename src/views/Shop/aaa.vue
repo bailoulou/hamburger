@@ -17,7 +17,7 @@
         </div>
         <div class="right">
           <p>
-            前方就餐<span>{{item.wait}}</span>桌
+            等待<span>{{item.wait}}</span>桌
           </p>
           <p>大约<span>{{item.time}}</span>分钟</p>
         </div>
@@ -31,7 +31,7 @@
       <p>当前桌号{{tableNum[0]}}</p>
       <p>{{PaiDuiNum}}</p>
       <!-- {{}} -->
-      前方就餐{{lineInfo[0]['wait']}}桌
+      前方等待1桌
     </div>
   </div>
 </template>
@@ -56,7 +56,7 @@ export default {
       lineInfo,
       Text:true,
       PaiDui:'立即取号',
-      PaiDuiNum: 0,
+      PaiDuiNum:"008",
       Num: 0,
       tableNum: [],
     }
@@ -70,15 +70,10 @@ export default {
     // 需要隐藏的脚部的页面需要加上
     ...mapMutations("global", ["setFooter"]),
     table(){
-      this.PaiDuiNum = JSON.parse(window.localStorage.getItem('PaiDuiNum'))
-      this.lineInfo.forEach(item => {
-        item.isActive = false
-      })
+      // console.log(this.lineInfo)
       this.Text = !this.Text
       if(this.Text == false){
         this.PaiDui = '取号成功(取消排队)'
-        this.PaiDuiNum++
-        window.localStorage.setItem('PaiDuiNum', JSON.stringify(this.PaiDuiNum))
       }else{
         this.PaiDui = '立即取号'
         this.tableNum = []
@@ -95,24 +90,18 @@ export default {
       item.isActive = true
       this.tableNum.length = 0
       this.tableNum.push(item.id)
+      // console.log(this.tableNum)
     }
   },
   // 需要隐藏的脚部的页面需要加上
   created(){
       this.setFooter(false)
-      const dis = JSON.parse(window.localStorage.getItem('tableNum'))[0]
-      this.lineInfo.forEach((item, index) => {
-        if(item.id == dis){
-          this.lineInfo.splice(index, 1)
-        }
-      })
-      this.lineInfo.forEach(item => {
-        item.wait = 4 - this.lineInfo.length
-      })
-      // window.localStorage.setItem('lineInfo', JSON.stringify(this.lineInfo))
+      console.log(JSON.parse(window.localStorage.getItem('tableNum'))[0])
+      const 
       this.lineInfo.forEach(item => {
         item.isActive = false
       })
+      // console.log(this.Text)
   },
 };
 </script>

@@ -2,11 +2,9 @@
     <div class="container">
         <van-nav-bar
             title="餐桌预约"
-            
-            right-text="欢迎您"
+            left-text="返回"
             left-arrow
             @click-left="onClickLeft"
-            @click-right="onClickRight"
         />
 
        <div class="tou">
@@ -17,7 +15,7 @@
                <ul>
                    <li>
                       
-                       <div class="active"><</div>
+                       <div class="active">&lt;</div>
                        <div class="active1">
                            <p class="active2">今天</p>
                            <p>3-14</p>
@@ -36,7 +34,8 @@
                        <p>3-17</p>
                    </li>
                    <li>
-                       <div class="active">></div>
+                       <div class="active">&gt;</div>
+                    
                        <div class="tu">
                            <van-cell is-link @click="showPopup">
                                 <van-icon name="comment-o" color="#1989fa" size="30" />
@@ -223,9 +222,11 @@
 </van-grid>
        </div>
        </div>
+       <div class="wei">
        <div class="wei" @click="ff">
           <span>立即绑定</span>
        </div>
+    </div>
     </div>
 </template>
 <script>
@@ -234,6 +235,8 @@
 // 导入vant组件
 // import "@/assets/font/iconfont.css";
 import Vue from 'vue';
+// 需要隐藏的脚部的页面需要加上
+import { mapMutations } from "vuex"
 import { NavBar, Toast, Popup ,Icon,Calendar,ActionSheet ,Cell,Grid, GridItem} from 'vant';
 import 'vant/lib/index.css';
 Vue.use(Popup);
@@ -248,44 +251,48 @@ Vue.use(GridItem);
 
 export default {
     data() {
-    return {
-        show: false,
-        show1:false,
-        actions: [
-        { name: '1' },
-        { name: '2' },
-        { name: '3' },
-        { name: '4' },
-        { name: '5' },
-        { name: '6' },
-        { name: '7' },
-        { name: '8人以上' },
-      ],
-    };
-  },
-     methods: {
-         ff() {
-      this.$router.push({path:'/shaba'})
-      
+        return {
+            show: false,
+            show1:false,
+            actions: [
+                { name: '1' },
+                { name: '2' },
+                { name: '3' },
+                { name: '4' },
+                { name: '5' },
+                { name: '6' },
+                { name: '7' },
+                { name: '8人以上' },
+            ],
+        };
     },
-    onClickLeft() {
-      this.$router.push({path:'/shop'})
-      
+    methods: {
+        onClickLeft() {
+            this.$router.push({path:"/shop"})
+            // 需要隐藏的脚部的页面需要加上
+            this.setFooter(true)
+        },
+        // 需要隐藏的脚部的页面需要加上
+        ...mapMutations("global", ["setFooter"]),
+
+        ff() {
+            this.$router.push({path:'/shaba'})
+        
+        },
+        showPopup() {
+            this.show = true;
+        },
+        onSelect(item) {
+            // 默认情况下点击选项时不会自动收起
+            // 可以通过 close-on-click-action 属性开启自动收起
+            this.show1 = false;
+            // Toast(item.name);
+        },
     },
-    onClickRight() {
-      Toast('凡哥很帅滴');
-      
+    // 需要隐藏的脚部的页面需要加上
+    created(){
+        this.setFooter(false)
     },
-    showPopup() {
-      this.show = true;
-    },
-    onSelect(item) {
-      // 默认情况下点击选项时不会自动收起
-      // 可以通过 close-on-click-action 属性开启自动收起
-      this.show1 = false;
-    //   Toast(item.name);
-    },
-  },
   
 };
 </script>
@@ -374,6 +381,7 @@ export default {
     margin-top: 10px;
     // left: -20px;
      font-size:14px ;
+text-align: left;
      text-align: left;
     
 }
@@ -460,7 +468,7 @@ display: flex;
     // float: left;
     flex: 1;
    
-    order-width: 0px;
+    // order-width: 0px;
     
     height: 72px;
     // position: absolute;

@@ -7,7 +7,7 @@
         @click-left="onClickLeft"
         style="border-bottom: 1px solid #e5e5e5"
         />
-        <div class="header"> 1 号桌</div>
+        <div class="header"> {{tableNum}}号桌</div>
         <van-card
         num="2"
         price="2.00"
@@ -104,10 +104,11 @@ export default {
     created(){
         this.setFooter(false)
     },
-    // 需要隐藏的脚部的页面需要加上
-    // beforeDestory(){
-    //     this.setFooter(true)
-    // }
+    computed: {
+        tableNum(){
+            return JSON.parse(window.localStorage.getItem('tableNum'))[0]
+        }
+    },
 }
 </script>
 

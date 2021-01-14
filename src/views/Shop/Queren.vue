@@ -42,6 +42,8 @@
 
 
 <script>
+// 需要隐藏的脚部的页面需要加上
+import { mapMutations } from "vuex"
 export default {
   data() {
     return {
@@ -57,7 +59,17 @@ export default {
   methods:{
   tiao(){
          this.$router.push({path:'/shopy'})
-     },}
+     },
+     // 需要隐藏的脚部的页面需要加上
+        ...mapMutations("global", ["setFooter"]),
+     },
+     created(){
+        this.setFooter(false)
+    },
+    // 需要隐藏的脚部的页面需要加上
+    beforeDestory(){
+        this.setFooter(true)
+    }
 };
 </script>
 <style lang="scss" scoped>
@@ -90,26 +102,26 @@ export default {
        img{
         width: 35px;
         height: 35px;
-        margin:7px auto;
-
+        margin:8px 7px;
+       
     } 
-  
       
     }
     .jg{
-        width: 70%;
+        width: 90%;
         height: 100%;
         background:#666666;
         color:#fff;
         span{
-           text-align: center;
            line-height: 35px;
            color:#fff;
+           margin-left:100px;
+           
         }
     }
      .gm{
            position: absolute;
-           left:209px;
+           right:0px;
            top:0px;
            width: 100px;
            height: 39px;      
@@ -135,6 +147,7 @@ export default {
     position: fixed;
     top: -5px;
     left: 15px;
+    text-align: center;
 }
 .van-card__content{
     height: 100px;

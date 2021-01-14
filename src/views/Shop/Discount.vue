@@ -14,6 +14,7 @@
 <script>
 import Vue from 'vue';
 import { NavBar } from 'vant';
+// 需要隐藏的脚部的页面需要加上
 import { mapMutations } from "vuex"
 
 Vue.use(NavBar);
