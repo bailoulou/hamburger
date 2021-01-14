@@ -16,12 +16,16 @@ import centerRouter from './routes/center'
 import myDiscountRouter from './routes/myDiscount'
 import myOrderRouter from './routes/myOrder'
 import myLineRouter from './routes/myLine'
+// import bushaRouter from './routes/busha'
+// import shabaRouter from './routes/shaba'
+import querenRouter from './routes/queren'
+import shopyRouter from './routes/shopy'
 
 import bushaRouter from './routes/busha'
 // import shabaRouter from './routes/shaba'
 
-import querenRouter from './routes/queren'
-import shopyRouter from './routes/shopy'
+// import querenRouter from './routes/queren'
+// import shopyRouter from './routes/shopy'
 
 
 const routes = [
@@ -53,6 +57,10 @@ const routes = [
   myDiscountRouter, 
   myOrderRouter,
   myLineRouter,
+  shabaRouter,
+  bushaRouter,
+  querenRouter,
+  shopyRouter,
 
   // shabaRouter,
 

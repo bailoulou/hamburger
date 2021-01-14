@@ -102,26 +102,26 @@ export default {
        img{
         width: 35px;
         height: 35px;
-        margin:7px auto;
-
+        margin:8px 7px;
+       
     } 
-  
       
     }
     .jg{
-        width: 70%;
+        width: 90%;
         height: 100%;
         background:#666666;
         color:#fff;
         span{
-           text-align: center;
            line-height: 35px;
            color:#fff;
+           margin-left:100px;
+           
         }
     }
      .gm{
            position: absolute;
-           left:209px;
+           right:0px;
            top:0px;
            width: 100px;
            height: 39px;      
@@ -147,6 +147,7 @@ export default {
     position: fixed;
     top: -5px;
     left: 15px;
+    text-align: center;
 }
 .van-card__content{
     height: 100px;
